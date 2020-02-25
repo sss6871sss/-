@@ -3,9 +3,9 @@ import json
 import numpy as np
 
 # user Token
-TOKEN = "xoxb-671504332070-888959532455-KttponQu8GXA9CDp1IynEbfK"
+TOKEN = "xxxxxxxxxxxxxx"
 # uketsuke joh
-CHANNEL = "CKJ9URPUH"
+CHANNEL = "xxxxxx"
 
 def sendSlack(imgPath, msg, title):
     files = {'file': open(imgPath, 'rb')}
