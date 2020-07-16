@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import subprocess
 from datetime import datetime
+import generateText as gt
 
 def jtalk(text):
     open_jtalk=['open_jtalk']
@@ -16,3 +17,11 @@ def jtalk(text):
     c.wait()
     aplay = ['aplay','-q','open_jtalk.wav']
     wr=subprocess.Popen(aplay)
+
+def talk_weather():
+    text = gt.generate_weather_text()
+    jtalk(text)
+
+def talk_greeting():
+    text = gt.generate_greeting_text()
+    jtalk(text)

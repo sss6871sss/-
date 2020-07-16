@@ -3,6 +3,7 @@ import time
 import RPi.GPIO as GPIO
 import filesUpload as fileUp
 import Startup4 as st3
+import jtalk as j
 
 #interval
 INTERVAL = 1
@@ -23,6 +24,7 @@ if __name__ == '__main__':
             if(GPIO.input(GPIO_PIN) == GPIO.HIGH):
                 print(datetime.now().strftime("%Y%m%d %H:%M:%S") + ":"+str("{0:05d}".format(cnt)+"time detection"))
                 cnt = cnt + 1
+                j.talk_greeting()
                 # start image capture : Startup3.py->imageCapture()
                 st3.imageCapture()
                 time.sleep(SLEEPTIME)

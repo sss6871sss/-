@@ -5,6 +5,7 @@ import cv2
 import filesUpload as fileUp
 import os
 import datetime
+import jtalk as j
 
 def imageCapture():
     GlobalCounter = 0
@@ -31,6 +32,7 @@ def imageCapture():
                     ret = uploadSlack(stream.array,gray,x,y,w,h)
                     if ret == True:
                         cv2.destroyAllWindows()
+                        j.talk_weather()
                         return
                     
                 # system.arrayをウィンドウに表示
